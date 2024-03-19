@@ -1,0 +1,33 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="800dp"
+    android:height="800dp"
+    android:viewportWidth="512"
+    android:viewportHeight="512">
+  <path
+      android:pathData="M161.02,-87.37A71.37,71.37 135,1 0,89.65 -16,71.45 71.45,0 0,0 161.02,-87.37ZM50.28,-87.37A39.37,39.37 0,1 1,89.65 -48,39.42 39.42,0 0,1 50.28,-87.37Z"
+      android:fillColor="@color/blue"/>
+  <path
+      android:pathData="M164.97,-274.31a59.47,59.47 45,1 0,-59.47 59.47A59.53,59.53 0,0 0,164.97 -274.31ZM78.04,-274.31a27.47,27.47 0,1 1,27.47 27.47A27.5,27.5 78.76,0 1,78.04 -274.31Z"
+      android:fillColor="@color/blue"/>
+  <path
+      android:pathData="M115.39,-435.52m0,29.64a29.64,29.64 135,1 1,0 -59.27a29.64,29.64 45,1 1,0 59.27"
+      android:fillColor="@color/blue"/>
+  <path
+      android:pathData="M328.51,-87.37A71.37,71.37 135,1 0,257.14 -16,71.45 71.45,0 0,0 328.51,-87.37ZM217.77,-87.37A39.37,39.37 0,1 1,257.14 -48,39.42 39.42,0 0,1 217.77,-87.37Z"
+      android:fillColor="@color/blue"/>
+  <path
+      android:pathData="M316.61,-274.31a59.47,59.47 0,1 0,-59.47 59.47A59.53,59.53 0,0 0,316.61 -274.31ZM229.67,-274.31a27.47,27.47 0,1 1,27.47 27.47A27.5,27.5 0,0 1,229.67 -274.31Z"
+      android:fillColor="@color/blue"/>
+  <path
+      android:pathData="M257.14,-435.52m0,29.64a29.64,29.64 0,1 1,0 -59.27a29.64,29.64 0,1 1,0 59.27"
+      android:fillColor="@color/blue"/>
+  <path
+      android:pathData="M496,-87.37A71.37,71.37 0,1 0,424.63 -16,71.45 71.45,0 0,0 496,-87.37ZM385.26,-87.37A39.37,39.37 0,1 1,424.63 -48,39.42 39.42,0 0,1 385.26,-87.37Z"
+      android:fillColor="@color/blue"/>
+  <path
+      android:pathData="M468.24,-274.31a59.47,59.47 0,1 0,-59.47 59.47A59.53,59.53 0,0 0,468.24 -274.31ZM381.31,-274.31a27.47,27.47 0,1 1,27.47 27.47A27.5,27.5 0,0 1,381.31 -274.31Z"
+      android:fillColor="@color/blue"/>
+  <path
+      android:pathData="M398.89,-435.52m0,29.64a29.64,29.64 0,1 1,0 -59.27a29.64,29.64 0,1 1,0 59.27"
+      android:fillColor="@color/blue"/>
+</vector>

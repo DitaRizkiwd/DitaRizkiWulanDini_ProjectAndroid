@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+<!--    <include-->
+<!--        android:id="@+id/vComponenTopBar"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        layout="@layout/component_top_bar"-->
+<!--        />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/tvhelo"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        android:text="Your Profile"/>-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/ivLabelProfile"-->
+<!--        android:layout_width="100dp"-->
+<!--        android:layout_height="100dp"-->
+<!--        android:src="@drawable/profile"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/tvhelo"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        />-->
+
+
+
+<!--    <TextView-->
+<!--        android:id="@+id/tvLabelName"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginVertical="20dp"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/ivLabelProfile"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        tools:text="Name : Rizki"/>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/tvLabelgender"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginVertical="10dp"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/tvLabelName"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        tools:text="Gender : Male"/>-->
+
+<!--    <Button-->
+<!--        android:id="@+id/buttonLogout"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/tvLabelgender"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        android:text="Logout"-->
+<!--        android:backgroundTint="@color/blue"-->
+<!--        />-->
+
+    <TextView
+        android:id="@+id/tvadmin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="Admin"
+        android:padding="30dp"
+        android:textColor="@color/white"
+        android:background="@drawable/gradient_bg_admin"
+        />
+
+    <LinearLayout
+        android:id="@+id/ll1admin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvadmin">
+
+        <ImageView
+            android:id="@+id/iv1admin"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/baseline_account_circle_24"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:textSize="20dp"
+            android:text="Dita Rizki Wulan Dini"
+            />
+    </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/tvlayananadmin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll1admin"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_gravity="center"
+            android:textSize="15dp"
+            android:text="Layanan"
+            android:textColor="@color/gray"
+            />
+        <ImageView
+            android:id="@+id/ivic1admin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvlayananadmin"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/baseline_card_giftcard_24"
+            />
+        <TextView
+            android:id="@+id/tvkoderef"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/ivic1admin"
+            app:layout_constraintTop_toBottomOf="@id/tvlayananadmin"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="Kode Refferal"
+            />
+        <ImageView
+            android:id="@+id/ivarrowkoderef"
+            android:layout_width="17dp"
+            android:layout_height="17dp"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/baseline_arrow_forward_ios_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvkoderef"
+            app:layout_constraintBottom_toBottomOf="@id/tvkoderef"
+            />
+
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:background="@color/gray"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@id/ivic1admin"
+        app:layout_constraintTop_toBottomOf="@id/tvkoderef"
+        />
+
+    <ImageView
+        android:id="@+id/ivic2admin"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivic1admin"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="20dp"
+        android:src="@drawable/location_sign_svgrepo_com"
+        />
+    <TextView
+        android:id="@+id/tvlokasi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/ivic2admin"
+        app:layout_constraintTop_toBottomOf="@id/tvkoderef"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:text="Lokasi Cabang"
+        />
+    <ImageView
+        android:id="@+id/ivarrowlokasi"
+        android:layout_width="17dp"
+        android:layout_height="17dp"
+        android:layout_marginRight="20dp"
+        android:src="@drawable/baseline_arrow_forward_ios_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvlokasi"
+        app:layout_constraintBottom_toBottomOf="@id/tvlokasi"
+        />
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:background="@color/gray"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@id/ivic2admin"
+        app:layout_constraintTop_toBottomOf="@id/tvlokasi"
+        />
+
+    <TextView
+        android:id="@+id/tvadministrasiadmin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvlokasi"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_gravity="center"
+        android:textSize="15dp"
+        android:text="Administrasi"
+        android:textColor="@color/gray"
+        />
+
+    <ImageView
+        android:id="@+id/ivic3admin"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvadministrasiadmin"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="20dp"
+        android:src="@drawable/baseline_email_24"
+        />
+
+    <TextView
+        android:id="@+id/tvemailadmin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/ivic3admin"
+        app:layout_constraintTop_toBottomOf="@id/tvadministrasiadmin"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="15dp"
+        android:text="Buka Email"
+        />
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:background="@color/gray"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@id/ivic3admin"
+        app:layout_constraintTop_toBottomOf="@id/tvemailadmin"
+        />
+
+
+
+
+    <ImageView
+        android:id="@+id/ivarrowemail"
+        android:layout_width="17dp"
+        android:layout_height="17dp"
+        android:layout_marginRight="20dp"
+        android:src="@drawable/baseline_arrow_forward_ios_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvemailadmin"
+        app:layout_constraintBottom_toBottomOf="@id/tvemailadmin"
+        />
+
+    <ImageView
+        android:id="@+id/ivic4admin"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvemailadmin"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="20dp"
+        android:src="@drawable/lock_svgrepo_com__1_"
+        />
+
+    <TextView
+        android:id="@+id/tvkodeakses"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/ivic4admin"
+        app:layout_constraintTop_toBottomOf="@id/tvemailadmin"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:text="Ubah Kode Akses"
+        />
+    <ImageView
+        android:id="@+id/ivarrowkodeakses"
+        android:layout_width="17dp"
+        android:layout_height="17dp"
+        android:layout_marginRight="20dp"
+        android:src="@drawable/baseline_arrow_forward_ios_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvkodeakses"
+        app:layout_constraintBottom_toBottomOf="@id/tvkodeakses"
+        />
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:background="@color/gray"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@id/ivic4admin"
+        app:layout_constraintTop_toBottomOf="@id/tvkodeakses"
+        />
+
+
+    <ImageView
+        android:id="@+id/ivic5admin"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvkodeakses"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="20dp"
+        android:src="@drawable/ic_baseline_blur_on_24"
+        />
+
+    <TextView
+        android:id="@+id/tvubahmpin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/ivic5admin"
+        app:layout_constraintTop_toBottomOf="@id/tvkodeakses"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:text="Ubah MPIN"
+        />
+    <ImageView
+        android:id="@+id/ivarrowubahmpin"
+        android:layout_width="17dp"
+        android:layout_height="17dp"
+        android:layout_marginRight="20dp"
+        android:src="@drawable/baseline_arrow_forward_ios_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvubahmpin"
+        app:layout_constraintBottom_toBottomOf="@id/tvubahmpin"
+        />
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:background="@color/gray"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@id/ivic5admin"
+        app:layout_constraintTop_toBottomOf="@id/tvubahmpin"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
