@@ -5,12 +5,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import android.widget.ImageView
+import android.widget.TextView
 import com.example.bcasyariah.R
+import com.example.bcasyariah.model.MenuDashboardModel
 
-class DashboardMenuAdapter(private val context:Context):BaseAdapter() {
-    private var layoutInflater: LayoutInflater? =null
+class DashboardMenuAdapter(
+    private val menuData:List<MenuDashboardModel>,
+    private val context:Context)
+    :BaseAdapter() {
+        private var image :ImageView?=null
+        private var textMenu : TextView? =null
+        private var layoutInflater: LayoutInflater? =null
     override fun getCount(): Int {
-        return 0
+        return menuData.size
     }
 
     override fun getItem(p0: Int): Any? {
@@ -29,6 +37,16 @@ class DashboardMenuAdapter(private val context:Context):BaseAdapter() {
         if (bindingView ==null){
             bindingView=layoutInflater?.inflate(R.layout.item_menu_dashboard,null)
         }
+        image = bindingView?.findViewById(R.id.ivmenuT)
+        textMenu = bindingView?.findViewById(R.id.tvmenuT)
+
+//        untuk mendapatkan data dari list berdasarkan posisi
+        val resultMenu = menuData[position]
+
+//        untuk melakukan set pada masing masing componen di layout
+        image?.setImageResource(resultMenu.image)
+        textMenu?.text = resultMenu.menuName
+
         return bindingView
     }
 }
