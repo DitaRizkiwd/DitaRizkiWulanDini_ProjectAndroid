@@ -15,8 +15,10 @@ import com.example.bcasyariah.base.BaseFragment
 import com.example.bcasyariah.databinding.FragmentDashboardBinding
 import com.example.bcasyariah.model.AccountBalanceModel
 import com.example.bcasyariah.model.MenuDashboardModel
+import com.example.bcasyariah.model.PromoModel
 import com.example.bcasyariah.presentation.fragment.adapter.AccountNumberAdapter
 import com.example.bcasyariah.presentation.fragment.adapter.DashboardMenuAdapter
+import com.example.bcasyariah.presentation.fragment.adapter.PromoAdapter
 import com.example.bcasyariah.utils.HorizontalItemDecoration
 
 class DashboardFragment: BaseFragment<FragmentDashboardBinding>() {
@@ -24,6 +26,7 @@ class DashboardFragment: BaseFragment<FragmentDashboardBinding>() {
 //    lateinit var untuk meng inisialisasi nilai pada konstruktor
     private lateinit var menuAdapter: DashboardMenuAdapter
     private lateinit var accountAdapter: AccountNumberAdapter
+    private lateinit var promoAdapter: PromoAdapter
     private val horizontalItemDocaration by lazy {
         HorizontalItemDecoration(
             resources.getDimensionPixelSize(R.dimen.spacing16),
@@ -41,6 +44,7 @@ class DashboardFragment: BaseFragment<FragmentDashboardBinding>() {
     override fun setupView() {
         setUpViewMenu()
         setUpViewAccountNumber()
+        setUpPromo()
     }
     private fun setUpViewMenu(){
         menuAdapter = DashboardMenuAdapter(
@@ -69,6 +73,19 @@ class DashboardFragment: BaseFragment<FragmentDashboardBinding>() {
                 addItemDecoration(horizontalItemDocaration)
             }
         }
+    }
+    private fun setUpPromo(){
+        promoAdapter = PromoAdapter(data=populateImagePromo())
+        binding.componenpromo.rvpromo.adapter = promoAdapter
+        binding.componenpromo.rvpromo.layoutManager = LinearLayoutManager(
+            binding.root.context, LinearLayoutManager.HORIZONTAL,false
+        )
+        binding.componenpromo.rvpromo.apply {
+            if (itemDecorationCount <= 0) {
+                addItemDecoration(horizontalItemDocaration)
+            }
+        }
+
     }
     private fun populatedataView():List<MenuDashboardModel>{
         return listOf(
@@ -109,4 +126,26 @@ class DashboardFragment: BaseFragment<FragmentDashboardBinding>() {
             )
         )
     }
+
+    private fun populateImagePromo(): List<PromoModel>{
+        return listOf(
+            PromoModel(
+                imagePromo = R.drawable.image1
+            ),
+            PromoModel(
+                imagePromo = R.drawable.image2
+            ),
+            PromoModel(
+                imagePromo = R.drawable.image3
+            ),
+            PromoModel(
+                imagePromo = R.drawable.image4
+            ),
+            PromoModel(
+                imagePromo = R.drawable.image5
+            )
+
+        )
+    }
+
 }

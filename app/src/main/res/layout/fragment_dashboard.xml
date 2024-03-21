@@ -35,6 +35,13 @@
 
                 />
 
+            <include
+                android:id="@+id/componenpromo"
+                layout="@layout/componen_promo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
 
 
         </LinearLayout>
