@@ -9,6 +9,7 @@ import android.widget.AdapterView
 import android.widget.BaseAdapter
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.bcasyariah.R
 import com.example.bcasyariah.base.BaseFragment
@@ -19,6 +20,7 @@ import com.example.bcasyariah.model.PromoModel
 import com.example.bcasyariah.presentation.fragment.adapter.AccountNumberAdapter
 import com.example.bcasyariah.presentation.fragment.adapter.DashboardMenuAdapter
 import com.example.bcasyariah.presentation.fragment.adapter.PromoAdapter
+import com.example.bcasyariah.presentation.viewmodel.DashboardViewModel
 import com.example.bcasyariah.utils.HorizontalItemDecoration
 
 class DashboardFragment: BaseFragment<FragmentDashboardBinding>() {
@@ -27,6 +29,9 @@ class DashboardFragment: BaseFragment<FragmentDashboardBinding>() {
     private lateinit var menuAdapter: DashboardMenuAdapter
     private lateinit var accountAdapter: AccountNumberAdapter
     private lateinit var promoAdapter: PromoAdapter
+
+    private val viewModel :DashboardViewModel by viewModels()
+
     private val horizontalItemDocaration by lazy {
         HorizontalItemDecoration(
             resources.getDimensionPixelSize(R.dimen.spacing16),
@@ -42,13 +47,25 @@ class DashboardFragment: BaseFragment<FragmentDashboardBinding>() {
 
 
     override fun setupView() {
-        setUpViewMenu()
-        setUpViewAccountNumber()
         setUpPromo()
+
+        viewModel.getHomeMenu()
+        viewModel.getAccountBalance()
+        observeViewModel()
     }
-    private fun setUpViewMenu(){
+
+//    baca live data : viewlifecycleowner
+    private fun observeViewModel(){
+        viewModel.homeMenu.observe(viewLifecycleOwner){
+            setUpViewMenu(it)
+        }
+        viewModel.accountBalance.observe(viewLifecycleOwner){
+            setUpViewAccountNumber(it)
+        }
+    }
+    private fun setUpViewMenu(data :List<MenuDashboardModel>){
         menuAdapter = DashboardMenuAdapter(
-            menuData =populatedataView(),
+            menuData =data,
             context = binding.root.context
         )
         binding.componenmenu.gridMenu.adapter=menuAdapter
@@ -56,13 +73,13 @@ class DashboardFragment: BaseFragment<FragmentDashboardBinding>() {
                 _,_, position, _ ->
             Toast.makeText(
                 binding.root.context,
-                populatedataView()[position].menuName,
+                data[position].menuName,
                 Toast.LENGTH_SHORT
             ).show()
         }
     }
-    private fun setUpViewAccountNumber(){
-        accountAdapter = AccountNumberAdapter(data = populateDataAccountNumber())
+    private fun setUpViewAccountNumber(data:List<AccountBalanceModel>){
+        accountAdapter = AccountNumberAdapter(data)
         binding.componenbalance.rvAccountBalance.adapter = accountAdapter
         // setting orientasi recycle view menjadi horizontal
         binding.componenbalance.rvAccountBalance.layoutManager = LinearLayoutManager(
@@ -87,45 +104,7 @@ class DashboardFragment: BaseFragment<FragmentDashboardBinding>() {
         }
 
     }
-    private fun populatedataView():List<MenuDashboardModel>{
-        return listOf(
-            MenuDashboardModel(
-                image= R.drawable.telegram, menuName = "Transfer"),
-            MenuDashboardModel(
-                image= R.drawable.pembelian, menuName = "Pembelian"),
-            MenuDashboardModel(
-                image= R.drawable.pembayaran, menuName = "Pembayaran"),
-            MenuDashboardModel(
-                image= R.drawable.cardless, menuName = "Cardless"),
-            MenuDashboardModel(
-                image= R.drawable.historitransaksi, menuName = "Histori Transaksi"),
-            MenuDashboardModel(
-                image= R.drawable.mutasirekening, menuName = "Mutasi Rekening"),
-            MenuDashboardModel(
-                image= R.drawable.jadwalsholat, menuName = "Jadwal Sholat")
-        )
 
-    }
-
-    private fun populateDataAccountNumber(): List<AccountBalanceModel>{
-        return listOf(
-            AccountBalanceModel(
-                savingType = "Tahapan Wadiah Non Bonus",
-                noRek = 121343535,
-                balanceAmout = "Rp. 30.000.000"
-            ),
-            AccountBalanceModel(
-                savingType = "Tahapan Wadiah Non Bonus",
-                noRek = 121343535,
-                balanceAmout = "Rp. 30.000.000"
-            ),
-            AccountBalanceModel(
-                savingType = "Tahapan Wadiah Non Bonus",
-                noRek = 121343535,
-                balanceAmout = "Rp. 30.000.000"
-            )
-        )
-    }
 
     private fun populateImagePromo(): List<PromoModel>{
         return listOf(
