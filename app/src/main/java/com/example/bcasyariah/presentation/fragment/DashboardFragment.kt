@@ -15,6 +15,7 @@ import com.example.bcasyariah.R
 import com.example.bcasyariah.base.BaseFragment
 import com.example.bcasyariah.databinding.FragmentDashboardBinding
 import com.example.bcasyariah.model.AccountBalanceModel
+import com.example.bcasyariah.model.MenuDasboard
 import com.example.bcasyariah.model.MenuDashboardModel
 import com.example.bcasyariah.model.PromoModel
 import com.example.bcasyariah.presentation.fragment.adapter.AccountNumberAdapter
@@ -22,7 +23,9 @@ import com.example.bcasyariah.presentation.fragment.adapter.DashboardMenuAdapter
 import com.example.bcasyariah.presentation.fragment.adapter.PromoAdapter
 import com.example.bcasyariah.presentation.viewmodel.DashboardViewModel
 import com.example.bcasyariah.utils.HorizontalItemDecoration
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class DashboardFragment: BaseFragment<FragmentDashboardBinding>() {
 
 //    lateinit var untuk meng inisialisasi nilai pada konstruktor
@@ -57,15 +60,21 @@ class DashboardFragment: BaseFragment<FragmentDashboardBinding>() {
 //    baca live data : viewlifecycleowner
     private fun observeViewModel(){
         viewModel.homeMenu.observe(viewLifecycleOwner){
-            setUpViewMenu(it)
+            setUpViewMenu(it.data)
         }
         viewModel.accountBalance.observe(viewLifecycleOwner){
             setUpViewAccountNumber(it)
         }
     }
-    private fun setUpViewMenu(data :List<MenuDashboardModel>){
+    private fun setUpViewMenu(data :List<MenuDasboard>?){
+//        if(data.isNullOrEmpty()){
+//
+//        }
+//        else{
+//
+//        }
         menuAdapter = DashboardMenuAdapter(
-            menuData =data,
+            menuData =data?: listOf(),
             context = binding.root.context
         )
         binding.componenmenu.gridMenu.adapter=menuAdapter
@@ -73,7 +82,7 @@ class DashboardFragment: BaseFragment<FragmentDashboardBinding>() {
                 _,_, position, _ ->
             Toast.makeText(
                 binding.root.context,
-                data[position].menuName,
+                data?.get(position)?.NameMenu,
                 Toast.LENGTH_SHORT
             ).show()
         }

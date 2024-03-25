@@ -11,7 +11,9 @@ import com.example.bcasyariah.databinding.FragmentInboxBinding
 import com.example.bcasyariah.model.TransactionModel
 import com.example.bcasyariah.presentation.DetailTransactionActivity
 import com.example.bcasyariah.presentation.TransaksiActivity
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class InboxFragment:Fragment() {
     private var _binding:FragmentInboxBinding?=null
     private val binding get()= _binding!!

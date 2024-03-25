@@ -8,6 +8,6 @@ interface Service {
 
 //    ini untuk ke server
 //    retrofit : komunikasi ke http request
-    @GET("menu-dashboard")
+    @GET("menu-dahsboard")
     suspend fun getHomeMenu() : Response<MenuDashboardResponse>
 }

@@ -6,7 +6,9 @@ import com.example.bcasyariah.adapter.MessageTabAdapter
 import com.example.bcasyariah.base.BaseFragment
 import com.example.bcasyariah.databinding.FragmentMessageBinding
 import com.google.android.material.tabs.TabLayoutMediator
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MessageFragment : BaseFragment<FragmentMessageBinding>() {
     private var adapterMessage :MessageTabAdapter?=null
     override fun inflateBinding(

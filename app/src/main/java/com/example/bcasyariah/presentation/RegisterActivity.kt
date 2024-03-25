@@ -8,7 +8,9 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.bcasyariah.R
 import com.example.bcasyariah.databinding.ActivityRegisterBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class RegisterActivity :AppCompatActivity() {
     private lateinit var binding: ActivityRegisterBinding
     private var defaultPasswordVisibility=false

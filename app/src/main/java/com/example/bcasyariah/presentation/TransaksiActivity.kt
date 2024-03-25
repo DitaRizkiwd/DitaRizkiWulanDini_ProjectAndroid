@@ -7,7 +7,9 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.bcasyariah.adapter.ListTransactionAdapter
 import com.example.bcasyariah.databinding.ActivityTransaksiBinding
 import com.example.bcasyariah.model.TransactionModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class TransaksiActivity:AppCompatActivity() {
     private lateinit var binding: ActivityTransaksiBinding
     private var transactionAdapter=ListTransactionAdapter()

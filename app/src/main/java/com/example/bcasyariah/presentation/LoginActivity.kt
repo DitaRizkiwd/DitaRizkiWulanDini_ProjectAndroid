@@ -9,8 +9,10 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.bcasyariah.R
 import com.example.bcasyariah.databinding.ActivityLoginBinding
 import com.example.bcasyariah.utils.SharePrefHelper
+import dagger.hilt.android.AndroidEntryPoint
 import java.util.UUID
 
+@AndroidEntryPoint
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding : ActivityLoginBinding
     private lateinit var sharePref : SharePrefHelper

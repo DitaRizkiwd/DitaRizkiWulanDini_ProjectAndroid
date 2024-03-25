@@ -7,7 +7,9 @@ import com.example.bcasyariah.databinding.ActivityDetailTransactionBinding
 import com.example.bcasyariah.databinding.ActivityTransaksiBinding
 import com.example.bcasyariah.model.TransactionModel
 import com.example.bcasyariah.presentation.TransaksiActivity.Companion.TRANSACTION_KEY
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class DetailTransactionActivity : AppCompatActivity() {
     private lateinit var binding : ActivityDetailTransactionBinding
     override fun onCreate(savedInstanceState: Bundle?) {
